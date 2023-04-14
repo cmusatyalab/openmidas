@@ -1,0 +1,12 @@
+*.iml
+.gradle/
+.idea/
+.venv/
+.env
+__pycache__/
+local.properties
+android-client/app/standard/
+android-client/build/
+server/models/
+**/app/build/
+**/app/src/main/assets/

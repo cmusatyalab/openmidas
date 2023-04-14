@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package openmidas;
+
+option java_package = "edu.cmu.cs.openmidas";
+option java_outer_classname = "Protos";
+
+message Extras {
+    string model = 1;
+    int32 colormap = 2;
+}

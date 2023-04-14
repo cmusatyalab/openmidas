@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory
+        app:icon="@android:drawable/ic_menu_preferences"
+        app:key="general_category"
+        app:title="@string/pref_header_general">
+
+        <ListPreference
+            app:defaultValue="1"
+            app:entries="@array/pref_resolution_titles"
+            app:entryValues="@array/pref_resolution_values"
+            app:key="experimental_resolution"
+            app:negativeButtonText="@null"
+            app:positiveButtonText="@null"
+            app:title="@string/pref_title_resolution"
+            app:useSimpleSummaryProvider="true" />
+
+        <ListPreference
+            android:summary="Blah blah"
+            app:defaultValue="None"
+            app:entries="@array/pref_token_list_titles"
+            app:entryValues="@array/pref_token_list_values"
+            app:key="experimental_token_limit"
+            app:negativeButtonText="@null"
+            app:positiveButtonText="@null"
+            app:summary="@string/token_limit_summary"
+            app:title="@string/pref_title_token_limit"
+            app:useSimpleSummaryProvider="true" />
+
+        <ListPreference
+            app:defaultValue="1"
+            app:entries="@array/pref_model_titles"
+            app:entryValues="@array/pref_model_values"
+            app:key="experimental_model"
+            app:negativeButtonText="@null"
+            app:positiveButtonText="@null"
+            app:title="@string/pref_title_model"
+            app:useSimpleSummaryProvider="true" />
+
+        <ListPreference
+            app:defaultValue="1"
+            app:entries="@array/pref_colormap_titles"
+            app:entryValues="@array/pref_colormap_values"
+            app:key="experimental_colormap"
+            app:negativeButtonText="@null"
+            app:positiveButtonText="@null"
+            app:title="@string/pref_title_colormap"
+            app:summary="@string/colormap_summary"
+            app:useSimpleSummaryProvider="true" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        app:icon="@android:drawable/ic_menu_crop"
+        app:key="ui_category"
+        app:title="@string/pref_header_ui">
+
+        <SwitchPreferenceCompat
+            app:defaultValue="true"
+            app:key="general_recording"
+            app:title="@string/pref_title_recording" />
+
+        <SwitchPreferenceCompat
+            app:defaultValue="true"
+            app:key="general_show_fps"
+            app:title="@string/show_fps" />
+
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

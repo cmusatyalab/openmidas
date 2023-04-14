@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#FFC107</color>
+    <color name="colorPrimaryDark">#FF9800</color>
+    <color name="navigationBarColor">#000000</color>
+    <color name="colorAccent">#2196F3</color>
+
+    <color name="transparent">#00AE0A0A</color>
+    <!-- card colors -->
+    <color name="card_shadow_1">#D4D4D4</color>
+</resources>

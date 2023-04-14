@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#2196F3</color>
+    <string name="add">Add</string>
+    <string name="add_server">Add Server</string>
+    <string name="address_hint">192.168.1.10</string>
+    <string name="cancel">Cancel</string>
+    <string name="demo_dns">openscout-demo.cmusatyalab.org</string>
+    <string name="demo_server">cmu-demo-server</string>
+    <string name="error_empty">Name and address are required.</string>
+    <string name="error_exists">A server by that name already exists.</string>
+    <string name="error_invalidURI">Server address is an invalid URI.</string>
+    <string name="name_hint">Server Name</string>
+    <string name="no">No</string>
+    <string name="server_kept">Server retained.</string>
+    <string name="server_removed">Removed server: </string>
+    <string name="serverlist_heading">Server List</string>
+</resources>

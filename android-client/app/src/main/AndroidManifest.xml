@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="edu.cmu.cs.openmidas"
+    android:versionCode="1"
+    android:versionName="0.1">
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature
+        android:name="android.hardware.camera.front"
+        android:required="false" />
+    <uses-feature android:name="android.hardware.location.gps" />
+    <uses-feature android:name="android.hardware.location.network" />
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="com.google.android.glass.permission.DEVELOPMENT" />
+
+    <!-- Depth icons created by Freepik - Flaticon https://www.flaticon.com/free-icons/depth -->
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:theme="@style/MyGabrielMaterialTheme"
+        android:usesCleartextTraffic="true">
+        <!-- tools:node="remove" -->
+        <activity
+            android:name="edu.cmu.cs.openmidas.SettingsActivity"
+            android:label="@string/title_activity_settings"
+            android:parentActivityName="edu.cmu.cs.openmidas.ServerListActivity"
+            android:theme="@style/MyGabrielMaterialTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="edu.cmu.cs.openmidas.ServerListActivity" />
+        </activity>
+        <!-- tools:node="remove" -->
+        <activity
+            android:name="edu.cmu.cs.openmidas.ServerListActivity"
+            android:label="@string/title_activity_main"
+            android:screenOrientation="sensor"
+            android:theme="@style/MyGabrielMaterialTheme"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="edu.cmu.cs.openmidas.GabrielClientActivity"
+            android:label="@string/title_activity_main"
+            android:screenOrientation="landscape"
+            android:theme="@style/MyGabrielMaterialTheme"
+            android:exported="true">
+
+            <!-- Enable this intent-filter for regular Android Application -->
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
+
+
+            <!-- Enable below for Google Glass -->
+            <intent-filter>
+                <action android:name="edu.cmu.cs.openmidas.GabrielClientActivity" />
+                <category android:name="android:android.intent.category.DEFAULT" />
+            </intent-filter>
+
+        </activity>
+    </application>
+
+</manifest>
