@@ -1,6 +1,6 @@
-# PRIVACY POLICY FOR OpenScout
+# PRIVACY POLICY FOR OpenMiDaS
 
-This privacy policy governs your use of the software application OpenScout (“Application”) for mobile devices that was created by CMU Satya Lab. The Application allows for automated situational awareness from mobile devices.
+This privacy policy governs your use of the software application OpenMiDaS (“Application”) for mobile devices that was created by CMU Satya Lab. The Application allows for monocular depth estimation mobile devices.
 
 ## User Provided Information
 You do not provide any information when you download and use the Application.
