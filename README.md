@@ -15,7 +15,7 @@ A copy of this license is reproduced in the [LICENSE](LICENSE) file.
 
 ## Prerequisites
 
-OpenMiDaS uses pyTorch (MiDaS) for monocular depth estimation. It has been tested on __Ubuntu 20.04 LTS (focal)__. It requires an nVidia GPU.
+OpenMiDaS uses the [MiDaS](https://github.com/isl-org/MiDaS) models from pyTorch hub  for monocular depth estimation. It has been tested on __Ubuntu 20.04 LTS (focal)__. It requires an nVidia GPU.
 
 OpenMiDaS has an Android client that is available on the [Google PlayStore](https://play.google.com/store/apps/details?id=edu.cmu.cs.openmidas). It requires an Android device running Android 7.0+ (API level 33).
 
