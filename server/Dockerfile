@@ -26,8 +26,6 @@ RUN --mount=type=cache,target=/root/.cache \
     python3.8 -m pip install --upgrade pip keyrings.alt \
  && python3.8 -m pip install poetry
 
-# You can speed up build slightly by reducing build context with
-#     git archive --format=tgz HEAD | docker build -t openscout -
 WORKDIR /openmidas-server
 
 # install dependencies

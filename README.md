@@ -17,22 +17,15 @@ A copy of this license is reproduced in the [LICENSE](LICENSE) file.
 
 OpenMiDaS uses pyTorch (MiDaS) for monocular depth estimation. It has been tested on __Ubuntu 20.04 LTS (focal)__. It requires an nVidia GPU.
 
-OpenMiDaS has an Android client that is available on the [Google PlayStore](https://play.google.com/store/apps/details?id=edu.cmu.cs.openscout). It requires an Android device running Android 7.0+ (API level 33).
+OpenMiDaS has an Android client that is available on the [Google PlayStore](https://play.google.com/store/apps/details?id=edu.cmu.cs.openmidas). It requires an Android device running Android 7.0+ (API level 33).
 
 ## Server Installation using Docker
 
-The quickest way to set up an OpenScout server is to download and run our pre-built Docker container.  All of the following steps must be executed as root. We tested these steps using Docker 19.03.
+The quickest way to set up an OpenMiDaS server is to download and run our pre-built Docker container.  All of the following steps must be executed as root. We tested these steps using Docker 19.03.
 
 ### 1. Install Docker and docker-compose
 
-If you do not already have Docker installed, install it using the steps in this [Docker install guide](https://docs.docker.com/engine/installation/linux/docker-ce/ubuntu/) or use the following convenience script:
-
-```sh
-curl -fsSL get.docker.com -o get-docker.sh
-sh get-docker.sh
-```
-
-Install [docker-compose](https://docs.docker.com/compose/install/).
+If you do not already have Docker installed, install it using the steps in this [Docker install guide](https://docs.docker.com/engine/installation/linux/docker-ce/ubuntu/).
 
 ### 2. Ensure an NVIDIA driver is installed
 
@@ -57,18 +50,18 @@ After installing the toolkit, ensure that the Docker daemon is prepared to use i
 }
 ```
 
-### 4. Obtain OpenScout/OpenFace Docker images
+### 4. Obtain  Docker images
 
 ```sh
-docker pull cmusatyalab/openscout:stable
+docker pull cmusatyalab/openmidas:stable
 ```
 
-### 5. Configure the environment for OpenScout
+### 5. Configure the environment for OpenMiDaS
 
-In the `~/openscout/server/` directory, there is a template.env file that can be used as an example docker-compose environment. Copy it to .env and then modify it to control things such as the confidence thresholds for the face and object engines. If you are using the MS Face Cognitive Service, the API key and endpoint would also be specified here.
+In the `~/openmidas/server/` directory, there is a template.env file that can be used as an example docker-compose environment. Copy it to .env and then modify it to control things such as the MiDaS model to use.
 
 ```sh
-cd ~/openscout/server/
+cd ~/openmidas/server/
 cp template.env .env
 #edit .env file as necessary
 ```
@@ -78,39 +71,36 @@ cp template.env .env
 To launch all the containers and interleave the output from each container in the terminal:
 
 ```sh
-cd ~/openscout/server
+cd ~/openmidas/server
 docker-compose up
 ```
 
 If you wish to launch the containers in the background, you can pass the -d flag to docker compose. You can then use docker logs to inspect what is happening to individual containers.
 
 ```sh
-cd ~/openscout/server
+cd ~/openmidas/server
 docker-compose up -d
 ```
 
-If you wish to use the Microsoft Face Cognitive Service instead of OpenFace, the docker-compose.yaml file will need to be modified to comment out the openface-service and instead use ms-face-service.
-
-
 ### 7. Tearing down
 
-Hitting CTRL-C while `docker-compose up` is running will stop the containers. However to explicitly destroy them, you can use `docker-compose down`. This will also destroy the networks, however the training volume (and any images that were added to the training set) will persist until explicitly deleted with `docker volume rm`.
+Hitting CTRL-C while `docker-compose up` is running will stop the containers. However to explicitly destroy them, you can use `docker-compose down`. This will also destroy the networks.
 
 ## Android Client Installation
 
-You can download the client from the [Google Play Store](https://play.google.com/store/apps/details?id=edu.cmu.cs.openscout).
+You can download the client from the [Google Play Store](https://play.google.com/store/apps/details?id=edu.cmu.cs.openmidas).
 
 Alternatively, you can build the client yourself using [Android Studio](https://developer.android.com/studio). The source code for the client is located in the `android-client` directory. You should use the standardDebug [build variant](https://developer.android.com/studio/run#changing-variant).
 
 ### Managing Servers
 
-Servers can be added by entering a server name and address and pressing the + sign button. Once a server has been added, pressing the 'Connect' button will connect to the OpenScout server at that address. Pressing the trash can button will remove the server from the server list.
+Servers can be added by entering a server name and address and pressing the + sign button. Once a server has been added, pressing the 'Connect' button will connect to the OpenMiDaS server at that address. Pressing the trash can button will remove the server from the server list.
 
 ### Settings
 
 #### General
 
-* Show Screenshot/Recording Buttons - This will enable icons to allow you to capture video or screenshots while running OpenScout.
+* Show Screenshot/Recording Buttons - This will enable icons to allow you to capture video or screenshots while running OpenMiDaS.
 * Display Metrics - Enabling this option will show the number of detections during your sessions.
 
 #### Experimental
