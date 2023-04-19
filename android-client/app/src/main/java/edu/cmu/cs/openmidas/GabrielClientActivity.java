@@ -18,6 +18,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
+import java.text.MessageFormat;
 import java.util.Locale;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -501,7 +502,7 @@ public class GabrielClientActivity extends AppCompatActivity {
                     fpsLabel.setVisibility(View.VISIBLE);
 
                 }
-                String msg= "FPS: " + framesProcessed;
+                String msg= MessageFormat.format("{0}x{1}\nModel: {2}\nColormap: {3}\nFPS: {4}", Const.IMAGE_WIDTH, Const.IMAGE_HEIGHT, Const.MODEL, getResources().getStringArray(R.array.pref_colormap_titles)[Const.COLORMAP],framesProcessed);
                 fpsLabel.setText( msg );
                 framesProcessed = 0;
             }
