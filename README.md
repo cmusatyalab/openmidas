@@ -29,26 +29,14 @@ If you do not already have Docker installed, install it using the steps in this 
 
 ### 2. Ensure an NVIDIA driver is installed
 
-[These notes](https://github.com/NVIDIA/nvidia-docker/wiki/Frequently-Asked-Questions#how-do-i-install-the-nvidia-driver) explain how to install the driver.
+You can use the [CUDA Download page](https://developer.nvidia.com/cuda-downloads) to learn how to install the driver.
 
 If you think you may already have an NVIDIA driver installed, run `nvidia-smi`. The Driver version will be listed at the top of the table that gets printed.
 
 ### 3. Install the [NVIDIA Container Toolkit](https://github.com/NVIDIA/nvidia-docker)
 
-Follow [these instructions](https://github.com/NVIDIA/nvidia-docker#ubuntu-16041804-debian-jessiestretchbuster).
+Follow [these instructions](hhttps://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html#docker).
 
-After installing the toolkit, ensure that the Docker daemon is prepared to use it by adding the following to `/etc/docker/daemon.json`:
-
-```json
-{
-    "runtimes": {
-        "nvidia": {
-            "path": "/usr/bin/nvidia-container-runtime",
-            "runtimeArgs": []
-        }
-    }
-}
-```
 
 ### 4. Obtain  Docker images
 
