@@ -9,7 +9,7 @@ This is a developing project.
 
 ## License
 
-Unless otherwise stated in the table below, all source code and documentation are under the [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0.html).
+Unless otherwise stated in the table below, all source code and documentation are under the GPL, Version 2.0.
 A copy of this license is reproduced in the [LICENSE](LICENSE) file.
 
 
@@ -89,7 +89,7 @@ Servers can be added by entering a server name and address and pressing the + si
 #### General
 
 * Show Screenshot/Recording Buttons - This will enable icons to allow you to capture video or screenshots while running OpenMiDaS.
-* Display Metrics - Enabling this option will show the number of detections during your sessions.
+* Display Metrics - Enabling this option will show the metrics including FPS.
 
 #### Experimental
 
