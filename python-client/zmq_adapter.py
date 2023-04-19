@@ -1,26 +1,12 @@
 #!/usr/bin/env python3
 
-# Copyright 2021 Carnegie Mellon University
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#      http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
-
 import cv2
 import numpy as np
 from gabriel_protocol import gabriel_pb2
 from gabriel_client.websocket_client import ProducerWrapper
 import logging
 import zmq
-import openscout_pb2
+import openmidas_pb2
 import uuid
 
 logger = logging.getLogger(__name__)
@@ -34,8 +20,8 @@ class ZmqAdapter:
         parameter
         '''
         self.location = {}
-        self.model = 'coco'
-        self.client_id = str(uuid.uuid4())
+        self.model = 'DPT_Hybrid'
+        self.colormap = cv2.COLORMAP_OCEAN
         self._preprocess = preprocess
         self._source_name = source_name
         self.display_frames = display_frames
@@ -52,17 +38,14 @@ class ZmqAdapter:
         msg = self.socket.recv(flags=flags, copy=copy, track=track)
         buf = memoryview(msg)
         A = np.frombuffer(buf, dtype=md['dtype'])
-        self.location = md['location']
         self.model = md['model']
         return A.reshape(md['shape'])
 
     def produce_extras(self):
-        extras = openscout_pb2.Extras()
-        extras.client_id = self.client_id
-        extras.location.latitude = self.location['latitude']
-        extras.location.longitude = self.location['longitude']
+        extras = openmidas_pb2.Extras()
         extras.model = self.model
-        logger.debug(f"Model: {self.model}")
+        extras.colormap = self.colormap
+        logger.debug(f"Model: {self.model} Colormap: {self.colormap}")
         logger.debug(f"Lat: {self.location['latitude']} Lon: {self.location['longitude']}")
         return extras
 

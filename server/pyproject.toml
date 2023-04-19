@@ -9,7 +9,7 @@ authors = [
     "Carnegie Mellon University <satya+group@cs.cmu.edu>",
     "Thomas Eiszler <teiszler@cs.cmu.edu",
 ]
-license = "Apache-2.0"
+license = "GPL v2.0"
 repository = "https://github.com/cmusatyalab/openmidas"
 packages = [
     {include = "openmidas", from = "src"},

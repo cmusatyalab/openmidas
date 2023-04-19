@@ -1,1 +1,1 @@
-../protocol/openmidas_pb2.py
+../server/src/openmidas/protocol/openmidas_pb2.py
