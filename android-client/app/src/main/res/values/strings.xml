@@ -28,7 +28,7 @@
     <string name="about_menu">About&#8230;</string>
     <string name="settings_menu">Settings&#8230;</string>
     <string name="about_title" translatable="false">OpenMiDaS: Edge-based Monocular Depth Estimation</string>
-    <string name="about_message" translatable="false">Client ID: %s\nVersion: %s\nCopyright &#169; 2023\nCarnegie Mellon University\nThis is a developing project.\n\nAll source code and documentation are under the Apache License, Version 2.0 (http://www.apache.org/licenses/LICENSE-2.0.html)</string>
+    <string name="about_message" translatable="false">Client ID: %s\nVersion: %s\nCopyright &#169; 2023\nCarnegie Mellon University\nThis is a developing project.\n\nAll source code and documentation are under the GNU Public License, Version 2.0.</string>
 
 
     <string name="title_activity_settings">Settings</string>
