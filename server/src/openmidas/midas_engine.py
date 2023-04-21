@@ -37,16 +37,16 @@ class MiDaSEngine(cognitive_engine.Engine):
             logger.info("Storing detection images at {}".format(self.storage_path))
 
     def load_midas(self, model):
-        logger.info(f"Fetching {self.model} MiDaS model from torch hub...")
-        self.detector = torch.hub.load("intel-isl/MiDaS", model)
-        self.model = model
-
         if torch.cuda.is_available():
                 logger.info(f"pytorch is using CUDA.")
                 self.device = torch.device("cuda") 
         else:
             logger.info(f"pytorch is using CPU only.")
-            torch.device("cpu")
+            self.device = torch.device("cpu")
+
+        logger.info(f"Fetching {self.model} MiDaS model from torch hub...")
+        self.detector = torch.hub.load("intel-isl/MiDaS", model)
+        self.model = model
 
         self.detector.to(self.device)
         self.detector.eval()
