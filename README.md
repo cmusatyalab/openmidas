@@ -35,7 +35,7 @@ If you think you may already have an NVIDIA driver installed, run `nvidia-smi`. 
 
 ### 3. Install the [NVIDIA Container Toolkit](https://github.com/NVIDIA/nvidia-docker)
 
-Follow [these instructions](hhttps://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html#docker).
+Follow [these instructions](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html#docker).
 
 
 ### 4. Obtain  Docker images
