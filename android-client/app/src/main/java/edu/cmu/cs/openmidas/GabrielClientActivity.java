@@ -11,6 +11,8 @@ import java.util.Date;
 import java.net.URI;
 import java.util.function.Consumer;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 
@@ -473,7 +475,24 @@ public class GabrielClientActivity extends AppCompatActivity {
 
         Consumer<ErrorType> onDisconnect = errorType -> {
             Log.e(LOG_TAG, "Disconnect Error:" + errorType.name());
-            finish();
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+
+                    if (!isFinishing()){
+                        new AlertDialog.Builder(GabrielClientActivity.this)
+                                .setMessage(getString(R.string.error_message, errorType.name()))
+                                .setIcon(R.drawable.ic_error)
+                                .setTitle(R.string.error_title)
+                                .setPositiveButton(R.string.error_button, new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dialog, int id) {
+                                        finish();
+                                    }
+                                }).show();
+                    }
+                }
+            });
+
         };
         openmidascomm = ServerComm.createServerComm(
                 consumer, this.serverIP, port, getApplication(), onDisconnect);
