@@ -97,11 +97,11 @@ class MiDaSEngine(cognitive_engine.Engine):
         extras = cognitive_engine.unpack_extras(openmidas_pb2.Extras, input_frame)
         self.colormap = extras.colormap
 
-        if extras.model != '' and extras.model != self.model:
-            if extras.model < 0 or extras.model > len(self.valid_models):
-                logger.error(f"Invalid MiDaS model {extras.model}.")
-            else:
-                self.load_midas(self.valid_models[extras.model])
+        if extras.model < 0 or extras.model > len(self.valid_models):
+            logger.error(f"Invalid MiDaS model {extras.model}.")
+        else:
+            if  self.valid_models[extras.model] != self.model:
+                    self.load_midas(self.valid_models[extras.model])
         self.t0 = time.time()
         depth_img = self.process_image(input_frame.payloads[0])
         timestamp_millis = int(time.time() * 1000)
