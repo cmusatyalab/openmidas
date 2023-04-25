@@ -20,12 +20,12 @@ class Extras(google.protobuf.message.Message):
 
     MODEL_FIELD_NUMBER: builtins.int
     COLORMAP_FIELD_NUMBER: builtins.int
-    model: builtins.str
+    model: builtins.int
     colormap: builtins.int
     def __init__(
         self,
         *,
-        model: builtins.str = ...,
+        model: builtins.int = ...,
         colormap: builtins.int = ...,
     ) -> None: ...
     def ClearField(self, field_name: typing_extensions.Literal["colormap", b"colormap", "model", b"model"]) -> None: ...

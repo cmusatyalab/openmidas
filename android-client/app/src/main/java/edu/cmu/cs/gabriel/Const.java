@@ -39,10 +39,7 @@ public class Const {
     public static final String APP_NAME = "midas";
     public static final String SOURCE_NAME = "midas";
 
-    public static final String MODEL_LARGE = "DPT_Large";
-    public static final String MODEL_HYBRID = "DPT_Hybrid";
-    public static final String MODEL_SMALL = "MiDaS_small";
-    public static String MODEL = MODEL_LARGE;
+    public static int MODEL = 12;
     public static int COLORMAP = 1;
     // token size
     public static String TOKEN_LIMIT = "None";
@@ -79,16 +76,7 @@ public class Const {
                 }
                 break;
             case "experimental_model":
-                i = new Integer(sharedPreferences.getString(key, "1"));
-                if(i == 1) {
-                      Const.MODEL = Const.MODEL_LARGE;
-                } else if(i == 2) {
-                    Const.MODEL = Const.MODEL_HYBRID;
-                } else if (i == 3) {
-                    Const.MODEL = Const.MODEL_SMALL;
-                } else {
-                    Const.MODEL = Const.MODEL_LARGE;
-                }
+                Const.MODEL = new Integer(sharedPreferences.getString(key, "12"));
                 break;
             case "experimental_colormap":
                 Const.COLORMAP = new Integer(sharedPreferences.getString(key, "1"));

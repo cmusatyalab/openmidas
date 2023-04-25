@@ -13,7 +13,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0fopenmidas.proto\x12\topenmidas\")\n\x06\x45xtras\x12\r\n\x05model\x18\x01 \x01(\t\x12\x10\n\x08\x63olormap\x18\x02 \x01(\x05\x42\x1e\n\x14\x65\x64u.cmu.cs.openmidasB\x06Protosb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0fopenmidas.proto\x12\topenmidas\")\n\x06\x45xtras\x12\r\n\x05model\x18\x01 \x01(\x05\x12\x10\n\x08\x63olormap\x18\x02 \x01(\x05\x42\x1e\n\x14\x65\x64u.cmu.cs.openmidasB\x06Protosb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'openmidas_pb2', globals())

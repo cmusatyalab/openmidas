@@ -74,14 +74,34 @@
 
     <string name="pref_title_model">MiDaS Model</string>
     <string-array name="pref_model_titles">
-        <item>Large</item>
-        <item>Hybrid</item>
-        <item>Small</item>
+        <item>DPT_BEiT_L_512</item>
+        <item>DPT_BEiT_L_384</item>
+        <item>DPT_BEiT_384</item>
+        <item>DPT_SwinV2_L_384</item>
+        <item>DPT_SwinV2_B_384</item>
+        <item>DPT_SwinV2_T_256</item>
+        <item>DPT_Swin_L_384</item>
+        <item>DPT_Next_ViT_L_384</item>
+        <item>DPT_LeViT_224</item>
+        <item>DPT_Large</item>
+        <item>DPT_Hybrid</item>
+        <item>MiDaS</item>
+        <item>MiDaS_small</item>
     </string-array>
     <string-array name="pref_model_values">
+        <item>0</item>
         <item>1</item>
         <item>2</item>
         <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
     </string-array>
 
     <string name="pref_title_colormap">Colormap</string>

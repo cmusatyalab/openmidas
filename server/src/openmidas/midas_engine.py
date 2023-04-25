@@ -18,7 +18,20 @@ class MiDaSEngine(cognitive_engine.Engine):
 
     def __init__(self, args):
         self.store_detections = args.store
-        self.model = args.model # DPT_Large, DPT_Hybrid, MiDaS_small
+        self.model = args.model
+        self.valid_models = ['DPT_BEiT_L_512',
+        'DPT_BEiT_L_384',
+        'DPT_BEiT_384',
+        'DPT_SwinV2_L_384',
+        'DPT_SwinV2_B_384',
+        'DPT_SwinV2_T_256',
+        'DPT_Swin_L_384',
+        'DPT_Next_ViT_L_384',
+        'DPT_LeViT_224',
+        'DPT_Large',
+        'DPT_Hybrid',
+        'MiDaS',
+        'MiDaS_small']
         #timing vars
         self.count = 0
         self.lasttime = time.time()
@@ -53,10 +66,20 @@ class MiDaSEngine(cognitive_engine.Engine):
 
         midas_transforms = torch.hub.load("intel-isl/MiDaS", "transforms")
 
-        if self.model == "DPT_Large" or self.model == "DPT_Hybrid":
-            self.transform = midas_transforms.dpt_transform
-        else:
+        if self.model == "MiDaS_small":
             self.transform = midas_transforms.small_transform
+        elif self.model == 'DPT_SwinV2_L_384' or 'DPT_SwinV2_B_384' or 'DPT_Swin_L_384':
+            self.transform = midas_transforms.swin384_transform
+        elif self.model == "MiDaS":
+            self.transform = midas_transforms.default_transform
+        elif self.model == "DPT_SwinV2_T_256":
+            self.transform = midas_transforms.swin256_transform
+        elif self.model == "DPT_LeViT_224":
+            self.transform = midas_transforms.levit_transform
+        elif self.model == "DPT_BEiT_L_512":
+            self.transform = midas_transforms.beit512_transform
+        else:
+            self.transform = midas_transforms.dpt_transform
         logger.info("Depth predictor initialized with the following model: {}".format(model))
 
     def handle(self, input_frame):
@@ -75,10 +98,10 @@ class MiDaSEngine(cognitive_engine.Engine):
         self.colormap = extras.colormap
 
         if extras.model != '' and extras.model != self.model:
-            if extras.model not in ['DPT_Large','DPT_Hybrid','MiDaS_small']:
-                logger.error(f"Invalid MiDaS model {extras.model}. Try 'DPT_Large', 'DPT_Hybrid', or 'MiDaS_small'.")
+            if extras.model < 0 or extras.model > len(self.valid_models):
+                logger.error(f"Invalid MiDaS model {extras.model}.")
             else:
-                self.load_midas(extras.model)
+                self.load_midas(self.valid_models[extras.model])
         self.t0 = time.time()
         depth_img = self.process_image(input_frame.payloads[0])
         timestamp_millis = int(time.time() * 1000)
