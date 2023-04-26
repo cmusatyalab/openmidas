@@ -57,7 +57,7 @@ class MiDaSEngine(cognitive_engine.Engine):
             logger.info(f"pytorch is using CPU only.")
             self.device = torch.device("cpu")
 
-        logger.info(f"Fetching {self.model} MiDaS model from torch hub...")
+        logger.info(f"Fetching {model} MiDaS model from torch hub...")
         self.detector = torch.hub.load("intel-isl/MiDaS", model)
         self.model = model
 
