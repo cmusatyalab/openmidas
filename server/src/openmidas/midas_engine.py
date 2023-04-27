@@ -21,12 +21,10 @@ class MiDaSEngine(cognitive_engine.Engine):
         self.model = args.model
         self.valid_models = ['DPT_BEiT_L_512',
         'DPT_BEiT_L_384',
-        'DPT_BEiT_384',
         'DPT_SwinV2_L_384',
         'DPT_SwinV2_B_384',
         'DPT_SwinV2_T_256',
         'DPT_Swin_L_384',
-        'DPT_Next_ViT_L_384',
         'DPT_LeViT_224',
         'DPT_Large',
         'DPT_Hybrid',

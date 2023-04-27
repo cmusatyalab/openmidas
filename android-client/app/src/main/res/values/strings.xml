@@ -76,12 +76,10 @@
     <string-array name="pref_model_titles">
         <item>DPT_BEiT_L_512</item>
         <item>DPT_BEiT_L_384</item>
-        <item>DPT_BEiT_384</item>
         <item>DPT_SwinV2_L_384</item>
         <item>DPT_SwinV2_B_384</item>
         <item>DPT_SwinV2_T_256</item>
         <item>DPT_Swin_L_384</item>
-        <item>DPT_Next_ViT_L_384</item>
         <item>DPT_LeViT_224</item>
         <item>DPT_Large</item>
         <item>DPT_Hybrid</item>
@@ -100,8 +98,6 @@
         <item>8</item>
         <item>9</item>
         <item>10</item>
-        <item>11</item>
-        <item>12</item>
     </string-array>
 
     <string name="pref_title_colormap">Colormap</string>
